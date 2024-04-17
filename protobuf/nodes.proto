@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "github.com/ecgbeald/marston";
+
+service NodeService {
+    rpc returnStatus(Request) returns (Response) {}
+    rpc AssignTask(Request) returns (stream Response) {}
+}
+
+message Request {
+    string action = 1;
+}
+
+message Response {
+    string data = 1;
+}
